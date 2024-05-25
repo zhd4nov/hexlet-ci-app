@@ -1,0 +1,16 @@
+name: checks
+on: push
+jobs:
+    setup:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: setup
+              shell: bash
+              run: make setup
+            - name: test
+              shell: bash
+              run: make test
+            - name: lint
+              shell: bash
+              run: make lint
